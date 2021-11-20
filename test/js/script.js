@@ -1,9 +1,22 @@
 "use sctrict";
 
-const category = 'toys';
+const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', "");
 
-console.log(`https://someurl.com/${category}/5`);
+const a = prompt('Один из последних просмотренных фильмов?', ""),
+      b = prompt('На сколько оцените его?', ""),
+      c = prompt('Сколько фильмов вы уже посмотрели?', ""),
+      d = prompt('На сколько оцените его?', "");
 
-const user = "Ivan";
+const personalMovieDB =
+ {
+   count  : numberOfFilms,
+   movies : {},
+   actors : {},
+   genres : {},
+   privat : false
+ };
 
-alert(`прветб ${user}`);
+ personalMovieDB.movies[a] = b;
+ personalMovieDB.movies[c] = d;
+
+ console.log(personalMovieDB);
