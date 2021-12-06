@@ -1,7 +1,7 @@
 "use sctrict";
 
 
-
+/*
 const a = prompt('Один из последних просмотренных фильмов?', ""),
       b = prompt('На сколько оцените его?', ""),
       c = prompt('Сколько фильмов вы уже посмотрели?', ""),
@@ -80,7 +80,7 @@ const personalMovieDB =
 
 
 
-/*
+
 function showFirstMessage(text) {
   console.log(text);
   let num = 20;
@@ -195,6 +195,7 @@ const q = {
   one: 1,
   two: 2
 };*/
+console.log(document.body.childNodes);
 
 
 
