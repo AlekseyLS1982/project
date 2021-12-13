@@ -22,18 +22,35 @@ promoGenre.textContent = 'Драма';
 const promoBg = document.querySelector('.promo__bg');
 promoBg.style.background = "url(img/bg.jpg)";
 
-const promoList = document.querySelector('.promo__interactive-list');
-promoList.style.listStyleType = 'decimal';
-const promoLi = promoList.querySelectorAll('.promo__interactive-item');
-promoLi.forEach((e) => {
-  e.remove();
-});
 
-movieDB.movies.sort().forEach(function(e,i) {
-  promoList.innerHTML += 
-  `
-  <li class="promo__interactive-item">${i+1} ${e}
-    <div class="delete"></div>
-  </li>
-  `;
+
+
+function newItem () {
+  const promoList = document.querySelector('.promo__interactive-list');
+  const promoLi = promoList.querySelectorAll('.promo__interactive-item');
+    promoLi.forEach((e) => {
+      e.remove();
+    });
+    movieDB.movies.sort().forEach(function(e,i) {
+    promoList.innerHTML += 
+    `
+    <li class="promo__interactive-item">${i+1} ${e}
+      <div class="delete"></div>
+    </li>
+    `;
+  });
+}
+
+
+
+const add = document.querySelector('.add');
+const button = add.querySelector('button');
+const input = add.querySelector('.adding__input');
+
+
+button.addEventListener('click',function(e){
+  e.preventDefault();
+  movieDB.movies.push(input.value);
+  console.log(movieDB);
+  newItem();
 });
