@@ -48,9 +48,38 @@ const button = add.querySelector('button');
 const input = add.querySelector('.adding__input');
 
 
+
+
+
 button.addEventListener('click',function(e){
   e.preventDefault();
-  movieDB.movies.push(input.value);
-  console.log(movieDB);
-  newItem();
+  const checkbox = add.querySelector('[type = "checkbox"]');
+  console.log(checkbox.checked);
+  if(checkbox.checked == true) {
+    console.log('мой любимый фильм');
+  }
+  
+  if(input.value.length < 21) {
+    
+    newItem();
+  } else if (input.value.length > 21) {
+    let i = input.value;
+    movieDB.movies.push(i.substring(0,21) +'...');
+    newItem();
+  }
+  
+  
+  deleteTest();
+  
 });
+
+function deleteTest() {
+  let deleteDiv = document.querySelectorAll('.delete');
+    deleteDiv.forEach((item) => {
+      item.addEventListener('click', () => {
+        item.parentElement.remove();
+      });
+    });
+}
+deleteTest();
+
